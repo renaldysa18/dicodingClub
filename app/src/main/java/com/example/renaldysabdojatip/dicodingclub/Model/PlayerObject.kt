@@ -1,0 +1,24 @@
+package com.example.renaldysabdojatip.dicodingclub.Model
+
+import com.google.gson.annotations.SerializedName
+
+data class PlayerObject(
+        @SerializedName("idPlayer")
+        val idPlayer : String?,
+        @SerializedName("idTeam")
+        val idTeam : String?,
+        @SerializedName("strNationality")
+        val strNationality : String?,
+        @SerializedName("strPlayer")
+        val strPlayer : String?,
+        @SerializedName("strTeam")
+        val strTeam: String?,
+        @SerializedName("strDescriptionEN")
+        val strDescriptionEN : String?,
+        @SerializedName("strHeight")
+        val strHeight : String?,
+        @SerializedName("strWeight")
+        val strWeight : String?,
+        @SerializedName("strPosition")
+        val strPosition : String?
+)
