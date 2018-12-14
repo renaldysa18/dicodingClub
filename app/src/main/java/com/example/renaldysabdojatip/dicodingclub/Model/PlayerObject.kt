@@ -21,6 +21,10 @@ data class PlayerObject(
         val strWeight : String?,
         @SerializedName("strPosition")
         val strPosition : String?,
+        @SerializedName("strThumb")
+        val strThumb : String?,
         @SerializedName("strCutout")
-        val strCutOut : String?
+        val strCutOut : String?,
+        @SerializedName("strFanart1")
+        val strFanart1 : String?
 )

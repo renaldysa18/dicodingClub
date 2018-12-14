@@ -16,4 +16,5 @@
     <string name="teams">teams</string>
     <string name="favorites">favorites</string>
     <string name="match">match</string>
+    <string name="player_name">Player Name</string>
 </resources>
