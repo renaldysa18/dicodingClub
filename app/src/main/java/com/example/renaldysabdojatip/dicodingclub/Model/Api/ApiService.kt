@@ -32,4 +32,8 @@ object ApiService{
     fun getPlayerDetail(id : String) : String{
         return api_key+"/api/v1/json/1/lookup_all_players.php?id="+id
     }
+
+    fun getSearchTeam(id : String) : String{
+        return api_key+"/api/v1/json/1/searchteams.php?t="+id
+    }
 }
