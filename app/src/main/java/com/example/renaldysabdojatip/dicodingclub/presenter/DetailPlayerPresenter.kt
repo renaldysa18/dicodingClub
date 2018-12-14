@@ -16,7 +16,6 @@ class DetailPlayerPresenter(val view : DetailPlayerView, val apiRespository: Api
         view.showLoading()
         GlobalScope.launch(Dispatchers.Main) {
             val data = gson.fromJson(apiRespository.request(ApiService.getPlayerDetail(id)).await(), Player::class.java)
-
             view.showDataPlayer(data.playerObject)
             view.hideLoading()
         }
