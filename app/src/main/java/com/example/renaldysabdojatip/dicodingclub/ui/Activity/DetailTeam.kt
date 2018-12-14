@@ -21,6 +21,7 @@ import kotlinx.android.synthetic.main.activity_detail_team.*
 import com.example.renaldysabdojatip.dicodingclub.Model.db.database
 import com.example.renaldysabdojatip.dicodingclub.R.drawable.ic_add_to_favorite
 import com.example.renaldysabdojatip.dicodingclub.R.drawable.ic_added_to_favorite
+import com.example.renaldysabdojatip.dicodingclub.adapter.tabs.TabDetailTeamAdapter
 import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.delete
 import org.jetbrains.anko.db.insert
@@ -28,33 +29,6 @@ import org.jetbrains.anko.db.select
 import org.jetbrains.anko.toast
 
 class DetailTeam : AppCompatActivity(), DetailTeamView {
-    override fun showLoading() {
-        progressDetailTeam.visibility = View.VISIBLE
-        layoutDetailTeam.visibility = View.GONE
-    }
-
-    override fun hideLoading() {
-        progressDetailTeam.visibility = View.GONE
-        layoutDetailTeam.visibility = View.VISIBLE
-    }
-
-    override fun showData(data: List<TeamObject>) {
-        team = TeamObject(
-                data[0].idTeam,
-                data[0].strTeam,
-                data[0].strDescriptionEN,
-                data[0].strTeamBadge,
-                data[0].strStadium,
-                data[0].strLeague,
-                data[0].idLeague
-        )
-        Glide.with(applicationContext)
-                .load(data[0].strTeamBadge)
-                .into(imgvDetailTeam)
-
-        tvDescDetailTeam.text = data[0].strDescriptionEN
-        tvNamaTeamDetail.text = data[0].strTeam
-    }
 
     lateinit var idTeam: String
     lateinit var presenter: DetailTeamPresenter
@@ -112,7 +86,40 @@ class DetailTeam : AppCompatActivity(), DetailTeamView {
 
         favoriteState()
         presenter.getTeam(idTeam)
+
+        val tabAdapter = TabDetailTeamAdapter(idTeam,supportFragmentManager)
+        viewPagerMainTeamDetail.adapter = tabAdapter
+        tabsMainTeamDetail.setupWithViewPager(viewPagerMainTeamDetail)
     }
+
+    override fun showLoading() {
+        progressDetailTeam.visibility = View.VISIBLE
+        layoutDetailTeam.visibility = View.GONE
+    }
+
+    override fun hideLoading() {
+        progressDetailTeam.visibility = View.GONE
+        layoutDetailTeam.visibility = View.VISIBLE
+    }
+
+    override fun showData(data: List<TeamObject>) {
+        team = TeamObject(
+                data[0].idTeam,
+                data[0].strTeam,
+                data[0].strDescriptionEN,
+                data[0].strTeamBadge,
+                data[0].strStadium,
+                data[0].strLeague,
+                data[0].idLeague
+        )
+        Glide.with(applicationContext)
+                .load(data[0].strTeamBadge)
+                .into(imgvDetailTeam)
+
+        tvNamaTeamDetail.text = data[0].strTeam
+        tvStadiumDetailTeam.text = data[0].strStadium
+    }
+
 
     fun addToFavoriteTeam(){
         try {
