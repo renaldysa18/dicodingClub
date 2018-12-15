@@ -122,24 +122,26 @@
                         android:layout_height="match_parent">
                         <TextView
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                            android:id="@+id/tvDetailShotHome"
+                            android:id="@+id/tvDetailFormationHome"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content" />
                         <TextView
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                            android:text="shot"
+                            android:text="Formation"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
                         <TextView
                             android:textAlignment="viewEnd"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                            android:id="@+id/tvDetailShotAway"
+                            android:id="@+id/tvDetailFormationAway"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content" />
                     </LinearLayout>
+
                     <TextView
+                        android:layout_marginTop="20dp"
                         android:text="LineUp"
                         android:textStyle="bold"
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
@@ -147,6 +149,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
@@ -162,8 +166,108 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
                         <TextView
+                            android:textAlignment="viewEnd"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                             android:id="@+id/tvDetailGoalKeeperAway"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout
+
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:id="@+id/tvDetailDefenseHome"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:text="Defense"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:textAlignment="viewEnd"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:id="@+id/tvDetailDefenseAway"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:id="@+id/tvDetailMidfieldHome"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:text="Midfield"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:textAlignment="viewEnd"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:id="@+id/tvDetailMidfieldAway"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:id="@+id/tvDetailForwardHome"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:text="Forward"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:textAlignment="viewEnd"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:id="@+id/tvDetailForwardAway"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:id="@+id/tvDetailSubstituesHome"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:text="Substitutes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:textAlignment="viewEnd"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:id="@+id/tvDetailSubstituesAway"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content" />

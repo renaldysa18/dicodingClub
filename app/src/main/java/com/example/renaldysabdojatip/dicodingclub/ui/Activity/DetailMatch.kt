@@ -149,6 +149,18 @@ class DetailMatch : AppCompatActivity(), DetailPictMatchView {
         tvDetailNameAway?.text = data[0].strAwayTeam
         tvDetailHomeScore?.text = data[0].intHomeScore
         tvDetailAwayScore?.text = data[0].intAwayScore
+        tvDetailFormationHome?.text = data[0].strHomeFormation
+        tvDetailFormationAway?.text = data[0].strAwayFormation
+        tvDetailGoalKeeperHome?.text = data[0].strHomeLineupGoalkeeper
+        tvDetailGoalKeeperAway?.text = data[0].strAwayLineupGoalkeeper
+        tvDetailDefenseHome?.text = data[0].strHomeLineupDefense
+        tvDetailDefenseAway?.text = data[0].strAwayLineupDefense
+        tvDetailMidfieldHome?.text = data[0].strHomeLineupMidfield
+        tvDetailMidfieldAway?.text = data[0].strAwayLineupMidfield
+        tvDetailForwardHome?.text = data[0].strHomeLineupForward
+        tvDetailForwardAway?.text = data[0].strAwayLineupForward
+        tvDetailSubstituesHome?.text = data[0].strHomeLineupSubstitutes
+        tvDetailSubstituesAway?.text = data[0].strAwayLineupSubstitutes
 
     }
 
