@@ -4,9 +4,7 @@ package com.example.renaldysabdojatip.dicodingclub.ui.Fragment
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.LinearLayout
@@ -20,8 +18,16 @@ import com.example.renaldysabdojatip.dicodingclub.adapter.ListTeamAdapter
 import com.example.renaldysabdojatip.dicodingclub.presenter.TeamPresenter
 import com.example.renaldysabdojatip.dicodingclub.view.TeamView
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.fragment_list_team.*
 import kotlinx.android.synthetic.main.fragment_list_team.view.*
+import android.content.Context.SEARCH_SERVICE
+import android.support.v4.content.ContextCompat.getSystemService
+import android.app.SearchManager
+import android.content.Context
+import android.content.Context.SEARCH_SERVICE
+import android.support.v4.content.ContextCompat.getSystemService
+import android.support.v7.widget.SearchView
+import android.util.Log
+
 
 class ListTeamFragment : Fragment(), TeamView {
     private var teamObjects : MutableList<TeamObject> = mutableListOf()
@@ -30,6 +36,9 @@ class ListTeamFragment : Fragment(), TeamView {
     private lateinit var progresbar : ProgressBar
     private lateinit var layout : LinearLayout
     private lateinit var leagueName : String
+    private lateinit var searchView : SearchView
+    private lateinit var queryTextListener: SearchView.OnQueryTextListener
+    private var empty_input : String = "empty"
 
     override fun showLoading() {
         progresbar.visibility = View.VISIBLE
@@ -72,7 +81,7 @@ class ListTeamFragment : Fragment(), TeamView {
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 leagueName = v.dropLeague.selectedItem.toString()
-                presenter.getListTeam(leagueName)
+                presenter.getListTeam(leagueName, empty_input)
             }
 
         }
@@ -85,5 +94,51 @@ class ListTeamFragment : Fragment(), TeamView {
         return v
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
 
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        inflater?.inflate(R.menu.menu_search, menu)
+        val searchItem : MenuItem = menu!!.findItem(R.id.btn_search)
+        val searchManager = activity!!.getSystemService(Context.SEARCH_SERVICE) as SearchManager
+
+        if(searchItem != null){
+            searchView = searchItem.actionView as SearchView
+        }
+        if(searchView != null){
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(activity!!.componentName))
+            queryTextListener = object : SearchView.OnQueryTextListener {
+                override fun onQueryTextChange(newText: String): Boolean {
+                    if(newText!!.isNotEmpty()){
+                        teamObjects.clear()
+                        val search : String = newText.toLowerCase()
+                        presenter.getListTeam(leagueName, search)
+                    }
+                    return true
+                }
+
+                override fun onQueryTextSubmit(query: String): Boolean {
+                    Log.i("onQueryTextSubmit", query)
+
+                    return true
+                }
+            }
+            searchView.setOnQueryTextListener(queryTextListener)
+        }
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            R.id.btn_search ->
+                // Not implemented here
+                return false
+            else -> {
+            }
+        }
+        searchView.setOnQueryTextListener(queryTextListener)
+        return super.onOptionsItemSelected(item)
+    }
 }
