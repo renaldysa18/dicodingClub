@@ -43,18 +43,9 @@
                 android:layout_marginLeft="5dp"
                 android:src="@mipmap/ic_launcher" />
 
-            <TextView
-                android:id="@+id/tvDetailNameHome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/imgvHomeLogo"
-                android:layout_alignStart="@id/imgvHomeLogo"
-                android:layout_marginTop="3dp"
-                android:text="Home"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                android:textStyle="bold" />
 
             <TextView
+                android:text="-"
                 android:id="@+id/tvDetailHomeScore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -68,11 +59,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="VS"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:text="Score"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                 android:textStyle="bold" />
 
             <TextView
+                android:text="-"
                 android:id="@+id/tvDetailAwayScore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -90,20 +82,18 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="5dp"
                 android:src="@mipmap/ic_launcher" />
-
-            <TextView
-                android:id="@+id/tvDetailNameAway"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/imgvAwayLogo"
-                android:layout_alignRight="@id/imgvAwayLogo"
-                android:layout_marginTop="3dp"
-                android:text="Away"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                android:textStyle="bold" />
         </RelativeLayout>
 
+        <TextView
+            android:id="@+id/tvEventDetailMatch"
+            android:layout_marginTop="10dp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
         <LinearLayout
+            android:padding="5dp"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_weight="1"

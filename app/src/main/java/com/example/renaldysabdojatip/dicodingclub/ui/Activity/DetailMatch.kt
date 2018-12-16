@@ -121,8 +121,6 @@ class DetailMatch : AppCompatActivity(), DetailPictMatchView {
     override fun showDetailEvent(data: List<MatchObject>) {
         match = MatchObject(
                 data[0].idEvent,
-                data[0].strHomeTeam,
-                data[0].strAwayTeam,
                 data[0].intHomeScore,
                 data[0].intAwayScore,
                 data[0].dateEvent,
@@ -145,8 +143,6 @@ class DetailMatch : AppCompatActivity(), DetailPictMatchView {
                 data[0].strEvent
         )
         tvDateDetail?.text = data[0].dateEvent
-        tvDetailNameHome?.text = data[0].strHomeTeam
-        tvDetailNameAway?.text = data[0].strAwayTeam
         tvDetailHomeScore?.text = data[0].intHomeScore
         tvDetailAwayScore?.text = data[0].intAwayScore
         tvDetailFormationHome?.text = data[0].strHomeFormation
@@ -161,6 +157,7 @@ class DetailMatch : AppCompatActivity(), DetailPictMatchView {
         tvDetailForwardAway?.text = data[0].strAwayLineupForward
         tvDetailSubstituesHome?.text = data[0].strHomeLineupSubstitutes
         tvDetailSubstituesAway?.text = data[0].strAwayLineupSubstitutes
+        tvEventDetailMatch?.text = data[0].strEvent
 
     }
 
@@ -175,8 +172,6 @@ class DetailMatch : AppCompatActivity(), DetailPictMatchView {
                 insert(
                         FavoriteMatch.FAVORITE_TABLE_MATCH,
                         FavoriteMatch.EVENT_ID to match.idEvent,
-                        FavoriteMatch.HOME_TEAM to match.strHomeTeam,
-                        FavoriteMatch.AWAY_TEAM to match.strAwayTeam,
                         FavoriteMatch.HOME_SCORE to match.intHomeScore,
                         FavoriteMatch.AWAY_SCORE to match.intAwayScore,
                         FavoriteMatch.EVENT_DATE to match.dateEvent,

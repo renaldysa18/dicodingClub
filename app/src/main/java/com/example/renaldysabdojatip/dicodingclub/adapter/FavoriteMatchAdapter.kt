@@ -26,10 +26,9 @@ class FavoriteMatchAdapter(val items : List<FavoriteMatch>,val context: Context)
         val list = items.get(p1)
 
         p0?.date?.text = list.eventDate
-        p0?.homeTeam?.text = list.homeTeam
-        p0?.awayTeam?.text = list?.awayTeam
         p0?.homeScore?.text = list?.homeScore
         p0?.awayScore?.text = list?.awayScore
+        p0?.event?.text = list?.strEvent
 
         val idHomeTeam : String = list?.homeTeamId.toString()
         val idAwayTeam : String = list?.awayTeamId.toString()
@@ -51,11 +50,9 @@ class FavoriteMatchAdapter(val items : List<FavoriteMatch>,val context: Context)
 
     class ViewHolder (view : View) :RecyclerView.ViewHolder(view){
         val date = view.tvDateMatchFavorite
-        val homeTeam = view.tvHomeTeamMatchFavorite
-        val awayTeam = view.tvAwayTeamMatchFavorite
         val homeScore = view.tvHomeScoreMatchFavorite
         val awayScore = view.tvAwayScoreMatchFavorite
-
+        val event = view.tvEventMatchFavorite
         val card = view.cardMatchFavorite
     }
 }

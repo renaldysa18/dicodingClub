@@ -32,13 +32,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:textStyle="bold"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:text="Home Team"
-                android:id="@+id/tvHomeTeam"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <TextView
                 android:layout_marginLeft="5dp"
                 android:textStyle="bold"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
@@ -49,7 +42,7 @@
             <TextView
                 android:textStyle="bold"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:text="VS"
+                android:text="Score"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_width="wrap_content"
@@ -62,13 +55,14 @@
                 android:id="@+id/tvAwayScore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <TextView
-                android:textStyle="bold"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:text="Away Team"
-                android:id="@+id/tvAwayTeam"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
         </LinearLayout>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:id="@+id/tvEventLastMatch"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </android.support.v7.widget.CardView>

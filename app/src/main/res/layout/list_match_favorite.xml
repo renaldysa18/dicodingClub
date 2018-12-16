@@ -31,24 +31,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:textStyle="bold"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:text="Home Team"
-                android:id="@+id/tvHomeTeamMatchFavorite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <TextView
                 android:layout_marginLeft="5dp"
                 android:textStyle="bold"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:text="0"
+                android:text="-"
                 android:id="@+id/tvHomeScoreMatchFavorite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:textStyle="bold"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:text="VS"
+                android:text="Score"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_width="wrap_content"
@@ -56,18 +49,19 @@
             <TextView
                 android:textStyle="bold"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:text="0"
+                android:text="-"
                 android:layout_marginRight="10dp"
                 android:id="@+id/tvAwayScoreMatchFavorite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <TextView
-                android:textStyle="bold"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:text="Away Team"
-                android:id="@+id/tvAwayTeamMatchFavorite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
         </LinearLayout>
+        <TextView
+            android:id="@+id/tvEventMatchFavorite"
+            android:textStyle="bold"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </android.support.v7.widget.CardView>

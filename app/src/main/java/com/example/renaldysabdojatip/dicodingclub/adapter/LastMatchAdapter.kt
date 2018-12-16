@@ -26,11 +26,10 @@ class LastMatchAdapter(val items : List<MatchObject>, val context: Context) : Re
 
         p0?.dateLastMatch?.text = list.dateEvent
 
-        p0?.homeTeam?.text = list.strHomeTeam
         p0?.homeScore?.text = list.intHomeScore
 
-        p0?.awayTeam?.text = list.strAwayTeam
         p0?.awayScore?.text = list.intAwayScore
+        p0?.event?.text = list.strEvent
 
         val idHomeTeam : String = list?.idHomeTeam.toString()
         val idAwayTeam : String = list?.idAwayTeam.toString()
@@ -53,9 +52,8 @@ class LastMatchAdapter(val items : List<MatchObject>, val context: Context) : Re
     class ViewHolder(view : View) : RecyclerView.ViewHolder(view){
         val cardLastMatch = view.cardLastMatch
         val dateLastMatch = view.tvDateLastMatch
-        val homeTeam = view.tvHomeTeam
-        val awayTeam = view.tvAwayTeam
         val homeScore = view.tvHomeScore
         val awayScore = view.tvAwayScore
+        val event = view.tvEventLastMatch
     }
 }

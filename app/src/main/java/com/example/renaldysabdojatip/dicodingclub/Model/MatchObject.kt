@@ -5,10 +5,6 @@ import com.google.gson.annotations.SerializedName
 data class MatchObject(
         @SerializedName("idEvent")
         var idEvent: String?,
-        @SerializedName("strHomeTeam")
-        var strHomeTeam: String?,
-        @SerializedName("strAwayTeam")
-        var strAwayTeam: String?,
         @SerializedName("intHomeScore")
         var intHomeScore: String?,
         @SerializedName("intAwayScore")

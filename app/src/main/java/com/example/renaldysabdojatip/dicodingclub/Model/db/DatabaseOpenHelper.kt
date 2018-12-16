@@ -32,8 +32,6 @@ class DatabaseOpenHelper(context: Context) :ManagedSQLiteOpenHelper(context, "Fa
         db?.createTable(FavoriteMatch.FAVORITE_TABLE_MATCH, true,
                 FavoriteMatch.ID to INTEGER + PRIMARY_KEY + AUTOINCREMENT,
                 FavoriteMatch.EVENT_ID to TEXT + UNIQUE,
-                FavoriteMatch.HOME_TEAM to TEXT,
-                FavoriteMatch.AWAY_TEAM to TEXT,
                 FavoriteMatch.HOME_SCORE to TEXT,
                 FavoriteMatch.AWAY_SCORE to TEXT,
                 FavoriteMatch.EVENT_DATE to TEXT,

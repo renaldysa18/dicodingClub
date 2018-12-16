@@ -2,8 +2,6 @@ package com.example.renaldysabdojatip.dicodingclub.Model.db
 
 data class FavoriteMatch(val id: Long?,
                          val eventId :String?,
-                         val homeTeam : String?,
-                         val awayTeam : String?,
                          val homeScore: String?,
                          val awayScore:String?,
                          val eventDate : String?,
@@ -29,8 +27,6 @@ data class FavoriteMatch(val id: Long?,
         const val FAVORITE_TABLE_MATCH : String = "FAVORITE_TABLE_TEAM"
         const val ID : String = "ID_"
         const val EVENT_ID : String = "EVENT_ID"
-        const val HOME_TEAM : String = "HOME_TEAM"
-        const val AWAY_TEAM : String = "AWAY_TEAM"
         const val HOME_SCORE : String = "HOME_SCORE"
         const val AWAY_SCORE : String = "AWAY_SCORE"
         const val EVENT_DATE : String = "EVENT_DATE"
