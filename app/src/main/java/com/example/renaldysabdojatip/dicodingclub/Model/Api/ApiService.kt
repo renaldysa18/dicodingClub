@@ -36,4 +36,8 @@ object ApiService{
     fun getSearchTeam(id : String) : String{
         return api_key+"/api/v1/json/1/searchteams.php?t="+id
     }
+
+    fun getSearchEvent(event : String) : String{
+        return api_key+"/api/v1/json/1/searchevents.php?e="+event
+    }
 }
