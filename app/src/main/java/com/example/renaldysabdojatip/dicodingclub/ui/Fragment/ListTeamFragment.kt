@@ -19,12 +19,8 @@ import com.example.renaldysabdojatip.dicodingclub.presenter.TeamPresenter
 import com.example.renaldysabdojatip.dicodingclub.view.TeamView
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_list_team.view.*
-import android.content.Context.SEARCH_SERVICE
-import android.support.v4.content.ContextCompat.getSystemService
 import android.app.SearchManager
 import android.content.Context
-import android.content.Context.SEARCH_SERVICE
-import android.support.v4.content.ContextCompat.getSystemService
 import android.support.v7.widget.SearchView
 import android.util.Log
 
@@ -100,7 +96,7 @@ class ListTeamFragment : Fragment(), TeamView {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        inflater?.inflate(R.menu.menu_search, menu)
+        inflater?.inflate(R.menu.menu_search_team, menu)
         val searchItem : MenuItem = menu!!.findItem(R.id.btn_search)
         val searchManager = activity!!.getSystemService(Context.SEARCH_SERVICE) as SearchManager
 
