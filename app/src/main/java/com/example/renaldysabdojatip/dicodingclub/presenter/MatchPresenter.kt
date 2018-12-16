@@ -15,17 +15,19 @@ import org.jetbrains.anko.uiThread
 
 class MatchPresenter(val view: MatchView, val apiRespository: ApiRespository, val gson: Gson,
                      val context: CoroutineContextProvider = CoroutineContextProvider()) {
-    fun getEventLast(id: String) {
+    fun getEventLast(id: String, search: String) {
         view.showLoading()
         GlobalScope.launch(Dispatchers.Main) {
-            val data = gson.fromJson(apiRespository.request(ApiService.getlastMatch(id)).await(), Match::class.java)
-            view.hideLoading()
-            view.showDataMatch(data.matchObject)
-
-
+            if (search == "empty") {
+                val data = gson.fromJson(apiRespository.request(ApiService.getlastMatch(id)).await(), Match::class.java)
+                view.hideLoading()
+                view.showDataMatch(data.matchObject)
+            } else if (id == "empty") {
+                val dataSearch = gson.fromJson(apiRespository.request(ApiService.getSearchEvent(search)).await(), Search::class.java)
+                view.hideLoading()
+                view.showDataMatch(dataSearch.event!!)
+            }
         }
-
-
     }
 
 
@@ -37,7 +39,7 @@ class MatchPresenter(val view: MatchView, val apiRespository: ApiRespository, va
                 val data = gson.fromJson(apiRespository.request(ApiService.getNextMatch(id)).await(), Match::class.java)
                 view.hideLoading()
                 view.showDataMatch(data.matchObject)
-            } else if (id == "empty"){
+            } else if (id == "empty") {
                 val dataSearch = gson.fromJson(apiRespository.request(ApiService.getSearchEvent(search)).await(), Search::class.java)
                 view.hideLoading()
                 view.showDataMatch(dataSearch.event!!)
