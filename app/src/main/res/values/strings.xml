@@ -10,6 +10,19 @@
         <item>Spanish La Liga</item>
     </string-array>
 
+    <string name="english_premier_league_id">4328</string>
+    <string name="english_league_championship_id">4329</string>
+    <string name="german_bundes_liga_id">4331</string>
+    <string name="italian_serie_A_id">4332</string>
+    <string name="french_ligue_1_id">4334</string>
+    <string name="spanish_la_liga_id">4335</string>
+
+    <string name="english_pemier_league">English Premier League</string>
+    <string name="english_league_championship">English League Championship</string>
+    <string name="german_bundes_liga">German Bundesliga</string>
+    <string name="italian_serie_A">Italian Serie A</string>
+    <string name="french_ligue_1">French Ligue 1</string>
+    <string name="spanish_la_liga">Spanish La Liga</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

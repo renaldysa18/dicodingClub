@@ -9,12 +9,12 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.SearchView
 import android.util.Log
 import android.view.*
-import android.widget.LinearLayout
-import android.widget.ProgressBar
+import android.widget.*
 import com.example.renaldysabdojatip.dicodingclub.model.api.ApiRespository
 import com.example.renaldysabdojatip.dicodingclub.model.MatchObject
 
 import com.example.renaldysabdojatip.dicodingclub.R
+import com.example.renaldysabdojatip.dicodingclub.R.array.league
 import com.example.renaldysabdojatip.dicodingclub.adapter.LastMatchAdapter
 import com.example.renaldysabdojatip.dicodingclub.presenter.MatchPresenter
 import com.example.renaldysabdojatip.dicodingclub.view.MatchView
@@ -31,8 +31,10 @@ class LastMatchFragment : Fragment(), MatchView {
     private lateinit var adapter: LastMatchAdapter
     private lateinit var progresbar: ProgressBar
     private lateinit var searchView: SearchView
+    private lateinit var spinner : Spinner
     private lateinit var queryTextListener: SearchView.OnQueryTextListener
     private var empty = "empty"
+    private lateinit var leagueName : String
 
     override fun showLoading() {
         progresbar.visibility = View.VISIBLE
@@ -59,6 +61,7 @@ class LastMatchFragment : Fragment(), MatchView {
         // Inflate the layout for this fragment
         val v = inflater.inflate(R.layout.fragment_last_match, container, false)
         progresbar = v.progressLastMatch
+        spinner = v.dropLeagueLastMatch
 
         v.recyclerLastMatch.layoutManager = LinearLayoutManager(activity, LinearLayout.VERTICAL, false)
 
@@ -66,7 +69,40 @@ class LastMatchFragment : Fragment(), MatchView {
         val gson = Gson()
 
         presenter = MatchPresenter(this, apiRequest, gson)
-        presenter.getEventLast("4328", empty)
+
+        val spinnerItem = resources.getStringArray(league)
+        spinner.adapter = ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item, spinnerItem)
+
+        spinner.onItemSelectedListener = object  : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                leagueName = spinner.selectedItem.toString()
+                if(leagueName.equals(getString(R.string.english_pemier_league))){
+                    presenter.getEventLast(getString(R.string.english_premier_league_id), empty)
+                }
+                if(leagueName.equals(getString(R.string.english_league_championship))){
+                    presenter.getEventLast(getString(R.string.english_league_championship_id), empty)
+                }
+                if(leagueName.equals(getString(R.string.german_bundes_liga))){
+                    presenter.getEventLast(getString(R.string.german_bundes_liga_id), empty)
+                }
+                if(leagueName.equals(getString(R.string.italian_serie_A))){
+                    presenter.getEventLast(getString(R.string.italian_serie_A_id), empty)
+                }
+                if(leagueName.equals(getString(R.string.french_ligue_1))){
+                    presenter.getEventLast(getString(R.string.french_ligue_1_id), empty)
+                }
+                if(leagueName.equals(getString(R.string.spanish_la_liga))){
+                    presenter.getEventLast(getString(R.string.spanish_la_liga_id), empty)
+                }
+
+
+            }
+
+        }
 
         adapter = LastMatchAdapter(matchObjects, requireContext())
         v.recyclerLastMatch.adapter = adapter
