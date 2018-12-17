@@ -29,9 +29,9 @@ class NextMatchAdapter(val items  : List<MatchObject>, val context: Context) : R
         val idHomeTeam : String = list?.idHomeTeam.toString()
         val idAwayTeam : String = list?.idAwayTeam.toString()
         val idEvent : String = list?.idEvent.toString()
-        p0?.cardNext?.setOnClickListener(View.OnClickListener { v->
+        p0?.cardNext?.setOnClickListener{ v->
             toDetailMatch(context, idHomeTeam, idAwayTeam, idEvent)
-        })
+        }
     }
 
     private fun toDetailMatch(context: Context, idHomeTeam: String, idAwayTeam: String, idEvent: String?) {

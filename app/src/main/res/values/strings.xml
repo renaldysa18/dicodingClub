@@ -17,4 +17,16 @@
     <string name="favorites">favorites</string>
     <string name="match">match</string>
     <string name="player_name">Player Name</string>
+    <string name="date">Date</string>
+    <string name="score">Score</string>
+    <string name="formation">Formation</string>
+    <string name="goalkeeper">GoalKeeper</string>
+    <string name="defense">Defense</string>
+    <string name="midfield">Midfield</string>
+    <string name="forward">Forward</string>
+    <string name="substitution">Substitution</string>
+    <string name="weight">Weight(kg)</string>
+    <string name="height">Height(m)</string>
+    <string name="posisi">Posisi</string>
+    <string name="event">Event</string>
 </resources>

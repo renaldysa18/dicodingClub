@@ -5,5 +5,5 @@ import com.example.renaldysabdojatip.dicodingclub.Model.MatchObject
 interface MatchView{
     fun showLoading()
     fun hideLoading()
-    fun showDataMatch(data : List<MatchObject>)
+    fun showDataMatch(data: List<MatchObject>?)
 }

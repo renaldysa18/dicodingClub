@@ -33,7 +33,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="Weight(kg)"
+                    android:text="@string/weight"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
 
                 <TextView
@@ -41,7 +41,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="90kg"
+                    android:text="-"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
             </LinearLayout>
 
@@ -55,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="Height(m)"
+                    android:text="@string/height"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
 
                 <TextView
@@ -63,7 +63,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="90m"
+                    android:text="-"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
             </LinearLayout>
         </LinearLayout>
@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:text="posisi"
+            android:text="@string/posisi"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
 
         <ScrollView

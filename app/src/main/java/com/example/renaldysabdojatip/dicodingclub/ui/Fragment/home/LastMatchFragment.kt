@@ -20,6 +20,7 @@ import com.example.renaldysabdojatip.dicodingclub.presenter.MatchPresenter
 import com.example.renaldysabdojatip.dicodingclub.view.MatchView
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_last_match.view.*
+import org.jetbrains.anko.support.v4.toast
 
 
 class LastMatchFragment : Fragment(), MatchView {
@@ -41,11 +42,15 @@ class LastMatchFragment : Fragment(), MatchView {
         progresbar.visibility = View.GONE
     }
 
-    override fun showDataMatch(data: List<MatchObject>) {
-        matchObjects.clear()
-        data?.let {
-            matchObjects.addAll(data)
-            adapter.notifyDataSetChanged()
+    override fun showDataMatch(data: List<MatchObject>?) {
+        if(data == null){
+            toast("Data Tidak ada")
+        } else if (data != null) {
+            matchObjects.clear()
+            data?.let {
+                matchObjects.addAll(data)
+                adapter.notifyDataSetChanged()
+            }
         }
     }
 

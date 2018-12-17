@@ -35,9 +35,9 @@ class LastMatchAdapter(val items : List<MatchObject>, val context: Context) : Re
         val idAwayTeam : String = list?.idAwayTeam.toString()
         val idEvent : String = list?.idEvent.toString()
 
-        p0?.cardLastMatch?.setOnClickListener(View.OnClickListener { v ->
+        p0?.cardLastMatch?.setOnClickListener{ v->
             toDetailMatch(context, idHomeTeam, idAwayTeam, idEvent)
-        })
+        }
     }
 
     private fun toDetailMatch(context: Context, idHomeTeam: String, idAwayTeam: String, idEvent: String?) {

@@ -20,7 +20,7 @@
             android:id="@+id/tvDateMatchFavorite"
             android:layout_gravity="center_horizontal"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-            android:text="Date"
+            android:text="@string/date"
             android:layout_marginBottom="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -41,7 +41,7 @@
             <TextView
                 android:textStyle="bold"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:text="Score"
+                android:text="@string/score"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_width="wrap_content"

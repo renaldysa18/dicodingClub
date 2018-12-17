@@ -21,14 +21,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="22-11-2018"
+            android:text="@string/date"
             android:layout_marginBottom="10dp"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
 
         <TextView
             android:id="@+id/tvEventNextMatch"
             android:layout_gravity="center_horizontal"
-            android:text="Arsenal vs Fulham"
+            android:text="@string/event"
             android:textStyle="bold"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
             android:layout_width="wrap_content"

@@ -19,14 +19,15 @@ import com.example.renaldysabdojatip.dicodingclub.presenter.MatchPresenter
 import com.example.renaldysabdojatip.dicodingclub.view.MatchView
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_next_match.view.*
+import org.jetbrains.anko.support.v4.toast
 
 class NextMatchFragment : Fragment(), MatchView {
-    lateinit var progresbar : ProgressBar
-    private var matchObjects : MutableList<MatchObject> = mutableListOf()
-    private lateinit var presenter : MatchPresenter
-    private lateinit var adapter  : NextMatchAdapter
-    private lateinit var searchView : SearchView
-    private lateinit var queryTextListener : SearchView.OnQueryTextListener
+    lateinit var progresbar: ProgressBar
+    private var matchObjects: MutableList<MatchObject> = mutableListOf()
+    private lateinit var presenter: MatchPresenter
+    private lateinit var adapter: NextMatchAdapter
+    private lateinit var searchView: SearchView
+    private lateinit var queryTextListener: SearchView.OnQueryTextListener
     private var empty = "empty"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -59,11 +60,15 @@ class NextMatchFragment : Fragment(), MatchView {
         progresbar.visibility = View.GONE
     }
 
-    override fun showDataMatch(data: List<MatchObject>) {
-        matchObjects.clear()
-        data?.let {
-            matchObjects.addAll(data)
-            adapter.notifyDataSetChanged()
+    override fun showDataMatch(data: List<MatchObject>?) {
+        if (data == null) {
+            toast("Data Tidak ditemukan")
+        } else if (data != null) {
+            matchObjects.clear()
+            data?.let {
+                matchObjects.addAll(data)
+                adapter.notifyDataSetChanged()
+            }
         }
     }
 
@@ -74,19 +79,19 @@ class NextMatchFragment : Fragment(), MatchView {
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         inflater?.inflate(R.menu.menu_search_event, menu)
-        val searchItem : MenuItem = menu!!.findItem(R.id.btn_search_event)
+        val searchItem: MenuItem = menu!!.findItem(R.id.btn_search_event)
         val searchManager = activity!!.getSystemService(Context.SEARCH_SERVICE) as SearchManager
 
-        if(searchItem != null){
+        if (searchItem != null) {
             searchView = searchItem.actionView as SearchView
         }
-        if(searchView != null){
+        if (searchView != null) {
             searchView.setSearchableInfo(searchManager.getSearchableInfo(activity!!.componentName))
             queryTextListener = object : SearchView.OnQueryTextListener {
                 override fun onQueryTextChange(newText: String): Boolean {
-                    if(newText!!.isNotEmpty()){
+                    if (newText!!.isNotEmpty()) {
                         matchObjects.clear()
-                        val search : String = newText.toLowerCase()
+                        val search: String = newText.toLowerCase()
                         presenter.getEventNext(empty, search)
                     }
                     return true

@@ -10,8 +10,6 @@ import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 
 class MatchPresenter(val view: MatchView, val apiRespository: ApiRespository, val gson: Gson,
                      val context: CoroutineContextProvider = CoroutineContextProvider()) {
@@ -25,7 +23,7 @@ class MatchPresenter(val view: MatchView, val apiRespository: ApiRespository, va
             } else if (id == "empty") {
                 val dataSearch = gson.fromJson(apiRespository.request(ApiService.getSearchEvent(search)).await(), Search::class.java)
                 view.hideLoading()
-                view.showDataMatch(dataSearch.event!!)
+                view.showDataMatch(dataSearch.event)
             }
         }
     }
@@ -42,7 +40,7 @@ class MatchPresenter(val view: MatchView, val apiRespository: ApiRespository, va
             } else if (id == "empty") {
                 val dataSearch = gson.fromJson(apiRespository.request(ApiService.getSearchEvent(search)).await(), Search::class.java)
                 view.hideLoading()
-                view.showDataMatch(dataSearch.event!!)
+                view.showDataMatch(dataSearch.event)
             }
 
         }
