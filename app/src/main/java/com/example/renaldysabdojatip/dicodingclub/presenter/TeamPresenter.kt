@@ -24,12 +24,6 @@ class TeamPresenter(val view: TeamView, val apiRespository: ApiRespository, val 
                 view.hideLoading()
             } else if(team != "empty" && search != "empty") {
                 val searcTeam = gson.fromJson(apiRespository.request(ApiService.getSearchTeam(search)).await(), Search::class.java )
-                val leagueTeam = gson.fromJson(apiRespository.request(ApiService.getListTeam(team)).await(), Team::class.java)
-
-
-
-                Log.d("DATA_SEARCH", searcTeam.teamObject.toString())
-                Log.d("DATA_LEAGUE", leagueTeam.teamObject.toString())
                 view.getTeam(searcTeam.teamObject)
                 view.hideLoading()
             }

@@ -23,6 +23,7 @@ import android.app.SearchManager
 import android.content.Context
 import android.support.v7.widget.SearchView
 import android.util.Log
+import org.jetbrains.anko.support.v4.toast
 
 
 class ListTeamFragment : Fragment(), TeamView {
@@ -46,11 +47,15 @@ class ListTeamFragment : Fragment(), TeamView {
         layout.visibility = View.VISIBLE
     }
 
-    override fun getTeam(data: List<TeamObject>) {
-        teamObjects.clear()
-        data?.let {
-            teamObjects.addAll(data)
-            adapter.notifyDataSetChanged()
+    override fun getTeam(data: List<TeamObject>?) {
+        if (data == null) {
+            toast("data tidak ditemukan")
+        } else if (data != null) {
+            teamObjects.clear()
+            data?.let {
+                teamObjects.addAll(data)
+                adapter.notifyDataSetChanged()
+            }
         }
     }
 
