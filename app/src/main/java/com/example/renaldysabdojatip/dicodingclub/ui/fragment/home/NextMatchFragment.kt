@@ -9,8 +9,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.SearchView
 import android.util.Log
 import android.view.*
-import android.widget.LinearLayout
-import android.widget.ProgressBar
+import android.widget.*
 import com.example.renaldysabdojatip.dicodingclub.model.api.ApiRespository
 import com.example.renaldysabdojatip.dicodingclub.model.MatchObject
 import com.example.renaldysabdojatip.dicodingclub.R
@@ -29,6 +28,9 @@ class NextMatchFragment : Fragment(), MatchView {
     private lateinit var searchView: SearchView
     private lateinit var queryTextListener: SearchView.OnQueryTextListener
     private var empty = "empty"
+    private lateinit var leagueName : String
+    private lateinit var spinner : Spinner
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -36,6 +38,7 @@ class NextMatchFragment : Fragment(), MatchView {
         val v = inflater.inflate(R.layout.fragment_next_match, container, false)
 
         progresbar = v.progressNextMatch
+        spinner = v.dropLeagueNextMatch
 
         v.recyclerNextMatch.layoutManager = LinearLayoutManager(activity, LinearLayout.VERTICAL, false)
 
@@ -43,7 +46,38 @@ class NextMatchFragment : Fragment(), MatchView {
         val gson = Gson()
 
         presenter = MatchPresenter(this, apiRequest, gson)
-        presenter.getEventNext("4328", empty)
+        val spinnerItem = resources.getStringArray(R.array.league)
+        spinner.adapter = ArrayAdapter<String>(context, android.R.layout.simple_spinner_dropdown_item, spinnerItem)
+
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                leagueName = spinner.selectedItem.toString()
+                if(leagueName.equals(getString(R.string.english_pemier_league))){
+                    presenter.getEventNext(getString(R.string.english_premier_league_id), empty)
+                }
+                if(leagueName.equals(getString(R.string.english_league_championship))){
+                    presenter.getEventNext(getString(R.string.english_league_championship_id), empty)
+                }
+                if(leagueName.equals(getString(R.string.german_bundes_liga))){
+                    presenter.getEventNext(getString(R.string.german_bundes_liga_id), empty)
+                }
+                if(leagueName.equals(getString(R.string.italian_serie_A))){
+                    presenter.getEventNext(getString(R.string.italian_serie_A_id), empty)
+                }
+                if(leagueName.equals(getString(R.string.french_ligue_1))){
+                    presenter.getEventNext(getString(R.string.french_ligue_1_id), empty)
+                }
+                if(leagueName.equals(getString(R.string.spanish_la_liga))){
+                    presenter.getEventNext(getString(R.string.spanish_la_liga_id), empty)
+                }
+
+            }
+
+        }
 
         adapter = NextMatchAdapter(matchObjects, requireContext())
         v.recyclerNextMatch.adapter = adapter
