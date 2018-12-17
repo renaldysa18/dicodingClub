@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
     android:padding="10dp"
-    tools:context=".ui.Fragment.team.DetailTeamFragment">
+    tools:context=".ui.fragment.team.DetailTeamFragment">
 
     <ScrollView
         android:layout_width="match_parent"

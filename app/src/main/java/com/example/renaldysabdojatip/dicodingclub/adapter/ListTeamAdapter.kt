@@ -7,9 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
-import com.example.renaldysabdojatip.dicodingclub.Model.TeamObject
+import com.example.renaldysabdojatip.dicodingclub.model.TeamObject
 import com.example.renaldysabdojatip.dicodingclub.R
-import com.example.renaldysabdojatip.dicodingclub.ui.Activity.DetailTeam
+import com.example.renaldysabdojatip.dicodingclub.ui.activity.DetailTeam
 import kotlinx.android.synthetic.main.list_team_favorite.view.*
 
 class ListTeamAdapter(val items : List<TeamObject>, val context: Context) : RecyclerView.Adapter<ListTeamAdapter.ViewHolder>(){
@@ -30,9 +30,9 @@ class ListTeamAdapter(val items : List<TeamObject>, val context: Context) : Recy
                 .into(p0.imgTeam)
         val idTeam : String = list?.idTeam.toString()
 
-        p0.cardTeam?.setOnClickListener(View.OnClickListener { v->
+        p0.cardTeam?.setOnClickListener{ v->
             toDetailTeam(context, idTeam)
-        })
+        }
 
     }
 

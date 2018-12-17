@@ -6,8 +6,8 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.renaldysabdojatip.dicodingclub.ui.Activity.DetailMatch
-import com.example.renaldysabdojatip.dicodingclub.Model.MatchObject
+import com.example.renaldysabdojatip.dicodingclub.ui.activity.DetailMatch
+import com.example.renaldysabdojatip.dicodingclub.model.MatchObject
 import com.example.renaldysabdojatip.dicodingclub.R
 import kotlinx.android.synthetic.main.list_next_match.view.*
 

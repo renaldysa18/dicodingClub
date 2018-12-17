@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import com.example.renaldysabdojatip.dicodingclub.ui.Fragment.team.DetailPlayerFragment
-import com.example.renaldysabdojatip.dicodingclub.ui.Fragment.team.DetailTeamFragment
+import com.example.renaldysabdojatip.dicodingclub.ui.fragment.team.DetailPlayerFragment
+import com.example.renaldysabdojatip.dicodingclub.ui.fragment.team.DetailTeamFragment
 
 
 class TabDetailTeamAdapter(val idTeam : String,fm : FragmentManager) : FragmentPagerAdapter(fm){

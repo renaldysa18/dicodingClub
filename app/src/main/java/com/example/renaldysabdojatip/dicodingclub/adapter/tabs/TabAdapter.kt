@@ -3,8 +3,8 @@ package com.example.renaldysabdojatip.dicodingclub.adapter.tabs
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import com.example.renaldysabdojatip.dicodingclub.ui.Fragment.home.LastMatchFragment
-import com.example.renaldysabdojatip.dicodingclub.ui.Fragment.home.NextMatchFragment
+import com.example.renaldysabdojatip.dicodingclub.ui.fragment.home.LastMatchFragment
+import com.example.renaldysabdojatip.dicodingclub.ui.fragment.home.NextMatchFragment
 
 class TabAdapter (fm : FragmentManager ): FragmentPagerAdapter(fm) {
     override fun getItem(p0: Int): Fragment {

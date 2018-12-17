@@ -1,6 +1,6 @@
 package com.example.renaldysabdojatip.dicodingclub.view
 
-import com.example.renaldysabdojatip.dicodingclub.Model.PlayerObject
+import com.example.renaldysabdojatip.dicodingclub.model.PlayerObject
 
 interface DetailPlayerView {
     fun showLoading()

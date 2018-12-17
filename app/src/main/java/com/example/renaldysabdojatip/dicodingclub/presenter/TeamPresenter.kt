@@ -1,10 +1,10 @@
 package com.example.renaldysabdojatip.dicodingclub.presenter
 
 import android.util.Log
-import com.example.renaldysabdojatip.dicodingclub.Model.Api.ApiRespository
-import com.example.renaldysabdojatip.dicodingclub.Model.Api.ApiService
-import com.example.renaldysabdojatip.dicodingclub.Model.Search
-import com.example.renaldysabdojatip.dicodingclub.Model.Team
+import com.example.renaldysabdojatip.dicodingclub.model.api.ApiRespository
+import com.example.renaldysabdojatip.dicodingclub.model.api.ApiService
+import com.example.renaldysabdojatip.dicodingclub.model.Search
+import com.example.renaldysabdojatip.dicodingclub.model.Team
 import com.example.renaldysabdojatip.dicodingclub.ui.CoroutineContextProvider
 import com.example.renaldysabdojatip.dicodingclub.view.TeamView
 import com.google.gson.Gson

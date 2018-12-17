@@ -1,6 +1,6 @@
 package com.example.renaldysabdojatip.dicodingclub.view
 
-import com.example.renaldysabdojatip.dicodingclub.Model.MatchObject
+import com.example.renaldysabdojatip.dicodingclub.model.MatchObject
 
 interface MatchView{
     fun showLoading()

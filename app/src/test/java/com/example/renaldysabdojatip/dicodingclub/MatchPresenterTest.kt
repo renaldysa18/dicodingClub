@@ -1,9 +1,9 @@
 package com.example.renaldysabdojatip.dicodingclub
 
-import com.example.renaldysabdojatip.dicodingclub.Model.Api.ApiRespository
-import com.example.renaldysabdojatip.dicodingclub.Model.Api.ApiService
-import com.example.renaldysabdojatip.dicodingclub.Model.Match
-import com.example.renaldysabdojatip.dicodingclub.Model.MatchObject
+import com.example.renaldysabdojatip.dicodingclub.model.api.ApiRespository
+import com.example.renaldysabdojatip.dicodingclub.model.api.ApiService
+import com.example.renaldysabdojatip.dicodingclub.model.Match
+import com.example.renaldysabdojatip.dicodingclub.model.MatchObject
 import com.example.renaldysabdojatip.dicodingclub.presenter.MatchPresenter
 import com.example.renaldysabdojatip.dicodingclub.ui.TestContextProvider
 import com.example.renaldysabdojatip.dicodingclub.view.MatchView
@@ -42,6 +42,7 @@ class MatchPresenterTest {
         val event: MutableList<MatchObject> = mutableListOf()
         val response = Match(event)
         val matchId = "4328"
+        val search = "empty"
 
         GlobalScope.launch {
             `when`(gson.fromJson(apiRespository
@@ -49,7 +50,7 @@ class MatchPresenterTest {
                     Match::class.java)
             ).thenReturn(response)
 
-            presenter.getEventNext(matchId)
+            presenter.getEventNext(matchId,search)
 
             Mockito.verify(view).showLoading()
             Mockito.verify(view).showDataMatch(event)

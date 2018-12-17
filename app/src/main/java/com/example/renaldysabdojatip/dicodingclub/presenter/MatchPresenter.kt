@@ -1,9 +1,9 @@
 package com.example.renaldysabdojatip.dicodingclub.presenter
 
-import com.example.renaldysabdojatip.dicodingclub.Model.Api.ApiRespository
-import com.example.renaldysabdojatip.dicodingclub.Model.Api.ApiService
-import com.example.renaldysabdojatip.dicodingclub.Model.Match
-import com.example.renaldysabdojatip.dicodingclub.Model.Search
+import com.example.renaldysabdojatip.dicodingclub.model.api.ApiRespository
+import com.example.renaldysabdojatip.dicodingclub.model.api.ApiService
+import com.example.renaldysabdojatip.dicodingclub.model.Match
+import com.example.renaldysabdojatip.dicodingclub.model.Search
 import com.example.renaldysabdojatip.dicodingclub.ui.CoroutineContextProvider
 import com.example.renaldysabdojatip.dicodingclub.view.MatchView
 import com.google.gson.Gson

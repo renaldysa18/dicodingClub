@@ -1,7 +1,7 @@
 package com.example.renaldysabdojatip.dicodingclub.view
 
-import com.example.renaldysabdojatip.dicodingclub.Model.MatchObject
-import com.example.renaldysabdojatip.dicodingclub.Model.PictTeamObject
+import com.example.renaldysabdojatip.dicodingclub.model.MatchObject
+import com.example.renaldysabdojatip.dicodingclub.model.PictTeamObject
 
 interface  DetailPictMatchView {
     fun showLoading()

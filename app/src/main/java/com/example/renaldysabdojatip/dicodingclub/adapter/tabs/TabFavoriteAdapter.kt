@@ -3,8 +3,8 @@ package com.example.renaldysabdojatip.dicodingclub.adapter.tabs
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import com.example.renaldysabdojatip.dicodingclub.ui.Fragment.favorite.FavoritesMatchFragment
-import com.example.renaldysabdojatip.dicodingclub.ui.Fragment.favorite.FavoritesTeamFragment
+import com.example.renaldysabdojatip.dicodingclub.ui.fragment.favorite.FavoritesMatchFragment
+import com.example.renaldysabdojatip.dicodingclub.ui.fragment.favorite.FavoritesTeamFragment
 
 class TabFavoriteAdapter(fm : FragmentManager): FragmentPagerAdapter(fm){
     override fun getItem(p0: Int): Fragment {

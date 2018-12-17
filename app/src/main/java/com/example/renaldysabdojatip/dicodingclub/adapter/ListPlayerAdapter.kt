@@ -3,14 +3,13 @@ package com.example.renaldysabdojatip.dicodingclub.adapter
 import android.content.Context
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
-import com.example.renaldysabdojatip.dicodingclub.Model.PlayerObject
+import com.example.renaldysabdojatip.dicodingclub.model.PlayerObject
 import com.example.renaldysabdojatip.dicodingclub.R
-import com.example.renaldysabdojatip.dicodingclub.ui.Activity.DetailPlayer
+import com.example.renaldysabdojatip.dicodingclub.ui.activity.DetailPlayer
 import kotlinx.android.synthetic.main.list_player.view.*
 
 class ListPlayerAdapter(val items: List<PlayerObject>, val context: Context) : RecyclerView.Adapter<ListPlayerAdapter.ViewHolder>() {
@@ -41,9 +40,9 @@ class ListPlayerAdapter(val items: List<PlayerObject>, val context: Context) : R
         val idTeam : String = list?.idTeam.toString()
         val playerName : String = list?.strPlayer.toString()
 
-        p0?.cardPlayer?.setOnClickListener(View.OnClickListener {v ->
+        p0?.cardPlayer?.setOnClickListener{v ->
             toDetailPlayer(context,idTeam, playerName )
-        })
+        }
     }
 
     private fun toDetailPlayer(context: Context, idTeam: String,playerName :String) {

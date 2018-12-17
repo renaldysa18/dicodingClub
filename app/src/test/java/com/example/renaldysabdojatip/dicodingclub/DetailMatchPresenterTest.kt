@@ -1,10 +1,10 @@
 package com.example.renaldysabdojatip.dicodingclub
 
-import com.example.renaldysabdojatip.dicodingclub.Model.Api.ApiRespository
-import com.example.renaldysabdojatip.dicodingclub.Model.Api.ApiService
-import com.example.renaldysabdojatip.dicodingclub.Model.MatchObject
-import com.example.renaldysabdojatip.dicodingclub.Model.PictTeam
-import com.example.renaldysabdojatip.dicodingclub.Model.PictTeamObject
+import com.example.renaldysabdojatip.dicodingclub.model.api.ApiRespository
+import com.example.renaldysabdojatip.dicodingclub.model.api.ApiService
+import com.example.renaldysabdojatip.dicodingclub.model.MatchObject
+import com.example.renaldysabdojatip.dicodingclub.model.PictTeam
+import com.example.renaldysabdojatip.dicodingclub.model.PictTeamObject
 import com.example.renaldysabdojatip.dicodingclub.presenter.DetailMatchPresenter
 import com.example.renaldysabdojatip.dicodingclub.ui.TestContextProvider
 import com.example.renaldysabdojatip.dicodingclub.view.DetailPictMatchView

@@ -8,9 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
-import com.example.renaldysabdojatip.dicodingclub.Model.db.FavoriteTeam
+import com.example.renaldysabdojatip.dicodingclub.model.db.FavoriteTeam
 import com.example.renaldysabdojatip.dicodingclub.R
-import com.example.renaldysabdojatip.dicodingclub.ui.Activity.DetailTeam
+import com.example.renaldysabdojatip.dicodingclub.ui.activity.DetailTeam
 import kotlinx.android.synthetic.main.list_favorite.view.*
 
 class FavoriteTeamAdapter(val items : List<FavoriteTeam>, val context : Context) : RecyclerView.Adapter<FavoriteTeamAdapter.ViewHolder>(){
